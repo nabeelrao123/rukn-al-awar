@@ -1447,10 +1447,14 @@ import {
     faInstagram,
     faWhatsapp
 } from '@fortawesome/free-brands-svg-icons';
+ import weblogo from '../assets/weblogo.png'
+import {  AnimatePresence } from "framer-motion";
+
 
 const Weblogotakaful = () => {
     const [activeSection, setActiveSection] = useState('home');
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const [isExpanded, setIsExpanded] = useState(false);
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [lightboxImage, setLightboxImage] = useState('');
     const [formData, setFormData] = useState({
@@ -1611,24 +1615,30 @@ const Weblogotakaful = () => {
     const services = [
         {
             icon: faIndustry,
-            title: "Industrial Scrap",
+            title: "Blue steel fabricated Scrap.",
             description: "We collect and process industrial scrap from manufacturing units with proper documentation."
         },
         {
             icon: faTruckLoading,
-            title: "Pickup Services",
+            title: "pure CRC drum sheet bundles.",
             description: "Our fleet of trucks provides convenient pickup services for bulk scrap materials."
         },
         {
             icon: faWeight,
-            title: "Weigh & Pay",
+            title: "Rotatory machine clean material.",
             description: "Transparent weighing process with digital scales and instant payment for your scrap."
         },
         {
             icon: faLeaf,
-            title: "Eco-Friendly",
+            title: "NTP(NEW TIN PLATE BUNDLE)",
+            description: "We follow environmentally responsible recycling practices to reduce carbon footprint."
+        },
+         {
+            icon: faLeaf,
+            title: "Iron and Seel Slag Metal.",
             description: "We follow environmentally responsible recycling practices to reduce carbon footprint."
         }
+        
     ];
 
     const products = [
@@ -1815,153 +1825,169 @@ const Weblogotakaful = () => {
             </div>
 
             {/* Navigation */}
-          <nav
-    className="sticky top-0 z-50 shadow-lg transition-colors duration-300"
-    style={{ backgroundColor: themeStyles.navbarBackground }}
->
-    <div
-        className="section-container"
-        style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}
-    >
-        <div className="flex justify-between items-center py-4">
-
-            {/* Logo */}
-            <button
-                onClick={() => scrollToSection('home')}
-                className="flex items-center focus:outline-none"
-                style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+  
+<nav
+                className="sticky top-0 z-50 shadow-lg transition-colors duration-300"
+                style={{ backgroundColor: themeStyles.navbarBackground }}
             >
                 <div
-                    className="p-2 rounded-lg mr-3"
-                    style={{ backgroundColor: '#375382' }}
+                    className="section-container"
+                    style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}
                 >
-                    <FontAwesomeIcon icon={faRecycle} className="text-2xl text-white" />
-                </div>
+                    <div className="flex justify-between items-center py-4">
 
-                <div className="leading-tight text-left">
-                    <div className="text-xl md:text-2xl font-bold tracking-wide">
-                        <span style={{ color: '#375382' }}>RUKN</span>{' '}
-                        <span style={{ color: '#375382' }}>AL TAWAR</span>
-                    </div>
-                    <div className="text-xs md:text-sm uppercase tracking-widest opacity-90">
-                        Waste Treatment L.L.C
-                    </div>
-                </div>
-            </button>
-
-            {/* Desktop Menu & Theme Toggle */}
-            <div className="flex items-center space-x-4">
-                <div className="hidden md:flex space-x-8">
-                    {[
-                        { id: 'home', label: 'Home' },
-                        { id: 'about', label: 'About' },
-                        { id: 'services', label: 'Services' },
-                        { id: 'products', label: 'Products' },
-                        { id: 'gallery', label: 'Gallery' },
-                        { id: 'testimonials', label: 'Testimonials' },
-                        { id: 'contact', label: 'Contact' }
-                    ].map((item) => (
+                        {/* Logo */}
                         <button
-                            key={item.id}
-                            onClick={() => scrollToSection(item.id)}
-                            className="text-lg font-medium relative transition-colors duration-300"
-                            style={{
-                                background: 'none',
-                                border: 'none',
-                                cursor: 'pointer',
-                                color:
-                                    activeSection === item.id
-                                        ? '#375382'
-                                        : themeStyles.textColor
-                            }}
+                            onClick={() => scrollToSection('home')}
+                            className="flex items-center focus:outline-none"
+                            style={{ background: 'none', border: 'none', cursor: 'pointer' }}
                         >
-                            {item.label}
+                            <div
+                                className="p-2 rounded-lg mr-3"
+                            // style={{ backgroundColor: '#375382' }}
+                            >
+                                {/* <FontAwesomeIcon icon={faRecycle} className="text-2xl text-white" /> */}
+
+                                <img
+                                    src={weblogo}
+                                    alt="Rukn Al Tawar Logo"
+                                    className="w-8 h-8 object-contain"
+                                />
+
+
+                            </div>
+
+                            <div className="leading-tight text-left">
+                                <div className="text-xl md:text-2xl font-bold tracking-wide">
+                                    <span style={{ color: '#375382' }}>RUKN</span>{' '}
+                                    <span style={{ color: '#375382' }}>AL TAWAR</span>
+                                </div>
+                                <div className="text-xs md:text-sm uppercase tracking-widest opacity-90">
+                                    Waste Treatment LLC
+                                </div>
+                            </div>
                         </button>
-                    ))}
-                </div>
 
-                {/* Theme Toggle (Desktop) */}
-                <button
-                    onClick={toggleTheme}
-                    className="hidden md:flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300"
-                    style={{
-                        backgroundColor: isDarkMode ? '#374151' : '#fbbf24',
-                        color: isDarkMode ? '#fbbf24' : '#374151',
-                        border: 'none',
-                        cursor: 'pointer'
-                    }}
-                >
-                    <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
-                </button>
-            </div>
+                        {/* Desktop Menu & Theme Toggle */}
+                        <div className="flex items-center space-x-4">
+                            <div className="hidden md:flex space-x-8">
+                                {[
+                                    { id: 'home', label: 'Home' },
+                                    { id: 'about', label: 'About' },
+                                    { id: 'services', label: 'Services' },
+                                    { id: 'products', label: 'Products' },
+                                    { id: 'gallery', label: 'Gallery' },
+                                    { id: 'testimonials', label: 'Testimonials' },
+                                    { id: 'contact', label: 'Contact' }
+                                ].map((item) => (
+                                    <button
+                                        key={item.id}
+                                        onClick={() => scrollToSection(item.id)}
+                                        className="text-lg font-medium relative transition-colors duration-300"
+                                        style={{
+                                            background: 'none',
+                                            border: 'none',
+                                            cursor: 'pointer',
+                                            color:
+                                                activeSection === item.id
+                                                    ? '#375382'
+                                                    : themeStyles.textColor
+                                        }}
+                                    >
+                                        {item.label}
+                                    </button>
+                                ))}
+                            </div>
 
-            {/* Mobile Buttons */}
-            <div className="flex items-center space-x-4 md:hidden">
-                <button
-                    onClick={toggleTheme}
-                    className="flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300"
-                    style={{
-                        backgroundColor: isDarkMode ? '#374151' : '#fbbf24',
-                        color: isDarkMode ? '#fbbf24' : '#374151',
-                        border: 'none',
-                        cursor: 'pointer'
-                    }}
-                >
-                    <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
-                </button>
+                            {/* Theme Toggle (Desktop) */}
+                            <button
+                                onClick={toggleTheme}
+                                className="hidden md:flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300"
+                                style={{
+                                    backgroundColor: isDarkMode ? '#374151' : '#fbbf24',
+                                    color: isDarkMode ? '#fbbf24' : '#374151',
+                                    border: 'none',
+                                    cursor: 'pointer'
+                                }}
+                            >
+                                <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
+                            </button>
+                        </div>
 
-                <button
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="text-2xl"
-                    style={{
-                        background: 'none',
-                        border: 'none',
-                        color: themeStyles.textColor
-                    }}
-                >
-                    <FontAwesomeIcon icon={faBars} />
-                </button>
-            </div>
-        </div>
+                        {/* Mobile Buttons */}
+                        <div className="flex items-center space-x-4 md:hidden">
+                            <button
+                                onClick={toggleTheme}
+                                className="flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300"
+                                style={{
+                                    backgroundColor: isDarkMode ? '#374151' : '#fbbf24',
+                                    color: isDarkMode ? '#fbbf24' : '#374151',
+                                    border: 'none',
+                                    cursor: 'pointer'
+                                }}
+                            >
+                                <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
+                            </button>
 
-        {/* Mobile Menu */}
-        <div
-            className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}
-            style={{
-                borderTop: `1px solid ${themeStyles.cardBorder}`
-            }}
-        >
-            <div className="flex flex-col space-y-4 py-4">
-                {[
-                    { id: 'home', label: 'Home' },
-                    { id: 'about', label: 'About' },
-                    { id: 'services', label: 'Services' },
-                    { id: 'products', label: 'Products' },
-                    { id: 'gallery', label: 'Gallery' },
-                    { id: 'testimonials', label: 'Testimonials' },
-                    { id: 'contact', label: 'Contact' }
-                ].map((item) => (
-                    <button
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)}
-                        className="py-2 text-lg text-left transition-colors duration-300"
+                            <button
+                                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                                className="text-2xl"
+                                style={{
+                                    background: 'none',
+                                    border: 'none',
+                                    color: themeStyles.textColor
+                                }}
+                            >
+                                <FontAwesomeIcon icon={faBars} />
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Mobile Menu */}
+                    <div
+                        className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}
                         style={{
-                            background: 'none',
-                            border: 'none',
-                            cursor: 'pointer',
-                            color:
-                                activeSection === item.id
-                                    ? '#375382'
-                                    : themeStyles.textColor
+                            borderTop: `1px solid ${themeStyles.cardBorder}`
                         }}
                     >
-                        {item.label}
-                    </button>
-                ))}
-            </div>
-        </div>
-    </div>
-</nav>
+                        <div className="flex flex-col space-y-4 py-4">
+                            {[
+                                { id: 'home', label: 'Home' },
+                                { id: 'about', label: 'About' },
+                                { id: 'services', label: 'Services' },
+                                { id: 'products', label: 'Products' },
+                                { id: 'gallery', label: 'Gallery' },
+                                { id: 'testimonials', label: 'Testimonials' },
+                                { id: 'contact', label: 'Contact' }
+                            ].map((item) => (
+                                <button
+                                    key={item.id}
+                                    onClick={() => scrollToSection(item.id)}
+                                    className="py-2 text-lg text-left transition-colors duration-300"
+                                    style={{
+                                        background: 'none',
+                                        border: 'none',
+                                        cursor: 'pointer',
+                                        color:
+                                            activeSection === item.id
+                                                ? '#375382'
+                                                : themeStyles.textColor
+                                    }}
+                                >
+                                    {item.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+
+
+
+
+
 
 
             <main>
@@ -2131,7 +2157,31 @@ const Weblogotakaful = () => {
                             >
                                 <h3 className="text-3xl font-bold mb-6" style={{ color: '#375382' }}>What Sets Our Business Apart for Your Selection</h3>
                                 <p className="text-lg mb-4" style={{ color: themeStyles.textColor }}>
-                                    <strong>Rukn Al Tawar Waste Treatment LLC</strong> has been a leader in the metal recycling industry in Sharjah, UAE. We specialize in processing and recycling various types of metals including iron, steel, copper, and aluminum.
+                                    <strong>Rukn Al Tawar Waste Treatment LLC</strong> At Metal World Trading, we specialize in high-quality scrap buying services, ensuring competitive pricing and eco-friendly recycling solutions. With a commitment to excellence, we provide cost-effective, credible, and timely services to help our clients get the best value for their scrap. Our dedication, expertise, and customer-focused approach have earned us a strong reputation in the industry.
+                                </p>
+                                {/* <p className="text-lg mb-4" style={{ color: themeStyles.textColor }}>
+                                    Our state-of-the-art facility in the industrial area of Sajja, Sharjah is equipped with advanced sorting and processing technology, allowing us to handle large volumes of scrap metal efficiently and responsibly.
+                                </p>
+                                <p className="text-lg" style={{ color: themeStyles.textColor }}>
+                                    We serve industries, construction companies, and individual customers across the region, providing reliable recycling solutions that contribute to environmental sustainability.
+                                </p> */}
+
+<AnimatePresence>
+        {isExpanded && (
+          <motion.p
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="text-lg overflow-hidden mt-2"
+            style={{ color: themeStyles.textColor }}
+          >
+            {/* Through responsible waste management, eco-friendly processes, and a strong commitment
+            to a cleaner, greener future for upcoming generations. */}
+
+   <h3 className="text-3xl font-bold mb-6" style={{ color: '#375382' }}>About Our Company</h3>
+                                <p className="text-lg mb-4" style={{ color: themeStyles.textColor }}>
+                                    <strong>Rukn Al Tawar Waste Treatment LLC</strong> At Metal World Trading, we specialize in high-quality scrap buying services, ensuring competitive pricing and eco-friendly recycling solutions. With a commitment to excellence, we provide cost-effective, credible, and timely services to help our clients get the best value for their scrap. Our dedication, expertise, and customer-focused approach have earned us a strong reputation in the industry.
                                 </p>
                                 <p className="text-lg mb-4" style={{ color: themeStyles.textColor }}>
                                     Our state-of-the-art facility in the industrial area of Sajja, Sharjah is equipped with advanced sorting and processing technology, allowing us to handle large volumes of scrap metal efficiently and responsibly.
@@ -2139,6 +2189,31 @@ const Weblogotakaful = () => {
                                 <p className="text-lg" style={{ color: themeStyles.textColor }}>
                                     We serve industries, construction companies, and individual customers across the region, providing reliable recycling solutions that contribute to environmental sustainability.
                                 </p>
+
+
+
+
+
+
+
+
+
+          </motion.p>
+        )}
+      </AnimatePresence>
+
+    <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="mt-3 font-semibold transition-colors duration-300 bg-[#375382] p-3 border rounded-lg text-white border-[#375382] "
+        // style={{ color: themeStyles.primaryColor }}
+      >
+        {isExpanded ? "Read Less" : "Read More"}
+      </button>
+
+
+
+
+
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -2239,6 +2314,51 @@ const Weblogotakaful = () => {
                         </motion.div>
                     </div>
                 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 {/* Products Section */}
                 <section
@@ -2716,13 +2836,22 @@ const Weblogotakaful = () => {
                             <div className="flex items-center mb-6">
                                 <div className="p-2 rounded-lg mr-3" style={{ backgroundColor: '#375382' }}>
                                     <FontAwesomeIcon icon={faRecycle} className="text-2xl text-white" />
+                              {/* <img
+                              src={weblogo}
+                              alt='logo'
+                              />
+                               */}
                                 </div>
                                 <div className="text-2xl font-bold">
                                     <span style={{ color: '#FFFFFF' }}>Rukn</span>
                                     <span style={{ color: '#FFFFFF' }}> Al Tawar </span>  
-                                 <div className='text-xs md:text-sm  text-white' >
+                                 {/* <div className='text-xs md:text-sm  text-white' >
                         Waste Treatment LLC
-                    </div>
+                    </div> */}
+
+                     <div className="text-xs md:text-sm uppercase tracking-widest text-white opacity-90">
+                                    Waste Treatment LLC
+                                </div>
                                  <div className='text-xs md:text-sm uppercase text-white' >
                      ركن الطوار لمعالجة النفايات ذ.م.م
                     </div>
