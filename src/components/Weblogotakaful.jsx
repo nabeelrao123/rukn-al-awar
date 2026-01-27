@@ -1769,7 +1769,7 @@ const [isExpanded, setIsExpanded] = useState(false);
             transition: 'background-color 0.3s ease, color 0.3s ease'
         }}>
             {/* WhatsApp Floating Button */}
-            <div
+            {/* <div
                 className="whatsapp-float"
                 onClick={handleWhatsAppClick}
                 style={{
@@ -1795,7 +1795,52 @@ const [isExpanded, setIsExpanded] = useState(false);
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#375382'}
             >
                 <FontAwesomeIcon icon={faWhatsapp} />
-            </div>
+            </div> */}
+
+
+
+
+<div
+    className="whatsapp-float"
+    onClick={handleWhatsAppClick}
+    style={{
+        position: 'fixed',
+        width: '60px',
+        height: '60px',
+        bottom: '40px',
+        right: '40px',
+        backgroundColor: '#25D366', // official WhatsApp green
+        color: 'white',
+        borderRadius: '50px',
+        textAlign: 'center',
+        fontSize: '30px',
+        boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.3)',
+        zIndex: 100,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        cursor: 'pointer',
+        transition: 'all 0.3s ease'
+    }}
+    // onMouseEnter={(e) => e.target.style.backgroundColor = '#1ebe57'} // slightly darker WhatsApp green
+    // onMouseLeave={(e) => e.target.style.backgroundColor = '#25D366'} // back to official green
+>
+    <FontAwesomeIcon icon={faWhatsapp} />
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             {/* Theme Toggle Button */}
             <div
