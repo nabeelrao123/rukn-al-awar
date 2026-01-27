@@ -1449,7 +1449,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
  import weblogo from '../assets/weblogo.png'
 import {  AnimatePresence } from "framer-motion";
-
+import Counter from './Counter';
 
 const Weblogotakaful = () => {
     const [activeSection, setActiveSection] = useState('home');
@@ -2287,26 +2287,46 @@ const [isExpanded, setIsExpanded] = useState(false);
                                 border: `1px solid ${themeStyles.cardBorder}`
                             }}
                         >
-                            <h3 className="text-3xl font-bold mb-8 text-center" style={{ color: '#375382' }}>Experience & Expertise</h3>
+                            <h3 className="text-3xl font-bold  text-center mb-8 " style={{ color: '#375382' }}>Experience & Expertise</h3>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                 <div className="text-center">
-                                    <div className="text-5xl font-bold mb-2" style={{ color: '#375382' }}>15+</div>
+                                    <div className="text-5xl font-bold mb-2" style={{ color: '#375382' }}>   <Counter end={15} suffix="+" /></div>
                                     <div className="text-xl font-semibold" style={{ color: themeStyles.textColor }}>Years Experience</div>
                                 </div>
 
                                 <div className="text-center">
-                                    <div className="text-5xl font-bold mb-2" style={{ color: '#375382' }}>5000+</div>
+                                    <div className="text-5xl font-bold mb-2" style={{ color: '#375382' }}><Counter end={5000} suffix="+" /></div>
                                     <div className="text-xl font-semibold" style={{ color: themeStyles.textColor }}>Satisfied Clients</div>
                                 </div>
 
                                 <div className="text-center">
-                                    <div className="text-5xl font-bold mb-2" style={{ color: '#375382' }}>50K+</div>
+                                    <div className="text-5xl font-bold mb-2" style={{ color: '#375382' }}> <Counter end={50} suffix="K+" /></div>
                                     <div className="text-xl font-semibold" style={{ color: themeStyles.textColor }}>Tons Recycled</div>
                                 </div>
                             </div>
 
-                            <div className="mt-8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div className="mt-8 ">
                                 <p className="text-lg text-center" style={{ color: themeStyles.textColor }}>
                                     Our team consists of certified professionals with extensive knowledge in metal identification, sorting, processing, and recycling technologies.
                                 </p>
