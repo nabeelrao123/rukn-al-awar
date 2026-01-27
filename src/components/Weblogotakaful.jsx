@@ -1637,6 +1637,16 @@ const [isExpanded, setIsExpanded] = useState(false);
             icon: faLeaf,
             title: "Iron and Seel Slag Metal.",
             description: "We follow environmentally responsible recycling practices to reduce carbon footprint."
+        },
+         {
+            icon: faLeaf,
+            title: "NEW G.I BUNDLES.",
+            description: "We follow environmentally responsible recycling practices to reduce carbon footprint."
+        },
+         {
+            icon: faLeaf,
+            title: "LMS BUNDLES.",
+            description: "We follow environmentally responsible recycling practices to reduce carbon footprint."
         }
         
     ];
@@ -1649,27 +1659,27 @@ const [isExpanded, setIsExpanded] = useState(false);
         },
         {
             name: "Steel Scrap",
-            image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
             description: "Industrial & structural steel scrap at top market rates."
         },
         {
             name: "Copper Scrap",
-            image: "https://images.unsplash.com/photo-1593941707882-a5bba5338fe2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
             description: "High-quality copper wire, tubing & other materials."
         },
         {
             name: "Aluminum Scrap",
-            image: "https://images.unsplash.com/photo-1620748698226-b6a8a5e1e9f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
             description: "Clean aluminum scrap including sheets, cans & extrusions."
         },
         {
             name: "Brass Scrap",
-            image: "https://images.unsplash.com/photo-1621533672183-4b4b32f7164e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
             description: "Various grades of brass scrap materials."
         },
         {
             name: "Stainless Steel",
-            image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
             description: "All grades of stainless steel scrap available."
         }
     ];
@@ -1701,23 +1711,23 @@ const [isExpanded, setIsExpanded] = useState(false);
             title: "Scrap Yard Operations"
         },
         {
-            src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            fullSrc: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+            src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            fullSrc: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
             title: "Processing Facility"
         },
          {
-            src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            fullSrc: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+            src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            fullSrc: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
             title: "Processing Facility"
         },
          {
-            src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            fullSrc: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+            src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            fullSrc: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
             title: "Processing Facility"
         },
         {
-            src: "https://images.unsplash.com/photo-1593941707882-a5bba5338fe2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            fullSrc: "https://images.unsplash.com/photo-1593941707882-a5bba5338fe2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+            src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+            fullSrc: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
             title: "Steel Scrap Collection"
         },
         
