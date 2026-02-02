@@ -11,6 +11,7 @@ import Newfile from './components/Newfile'
 import Singlepage from './components/Singlepage'
 import Singlepagetoggle from './components/Singlepagetoggle'
 import Weblogotakaful from './components/Weblogotakaful'
+import Ruknnavbar from './components/RuknNavbar'
 
 function App() {
   return (
@@ -26,8 +27,9 @@ function App() {
       {/* <Newfile/> */}
 {/* <Singlepage/>       */}
 {/* <Singlepagetoggle/> */}
-<Weblogotakaful/>
+{/* <Weblogotakaful/> */}
 
+<Ruknnavbar/>
 
     </div>
   )
