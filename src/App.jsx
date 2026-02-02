@@ -27,9 +27,9 @@ function App() {
       {/* <Newfile/> */}
 {/* <Singlepage/>       */}
 {/* <Singlepagetoggle/> */}
-{/* <Weblogotakaful/> */}
+<Weblogotakaful/>
 
-<Ruknnavbar/>
+{/* <Ruknnavbar/> */}
 
     </div>
   )
